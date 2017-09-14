@@ -1,0 +1,31 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["import"],
+  "extends": "eslint:recommended",
+  "rules": {
+    "no-console": 0,
+    "one-var": [2, "never"],
+    "no-var": [2],
+    "no-bitwise": [2],
+    "comma-dangle": [2, "always-multiline"]
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      ".json$",
+      ".(css|scss|less)$",
+      ".(jpg|png|gif|svg|html|txt|md|woff|woff2|ttf|eot)$"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# npm
+node_modules
+
+# build
+lib
+docs/dist
+src/__tests__/fixtures/**/*.actual.css
