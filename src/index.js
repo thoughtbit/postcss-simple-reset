@@ -67,6 +67,10 @@ const stringifyNode = (node) => {
   }
 }
 
+const isPromise = (obj) => {
+  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
+}
+
 module.exports = postcss.plugin('postcss-simple-reset', () => {
   return (root) => {
     let promises = [];
@@ -88,8 +92,11 @@ module.exports = postcss.plugin('postcss-simple-reset', () => {
         });
 
         let promise = ruleFun(...params);
-        promises.push(promise);
 
+        if (isPromise(promise)) {
+          promises.push(promise);
+        }
+        
         promise.then((resolve) => {
           if (typeof resolve === 'object') {
             applyRuleSetToNode(resolve, rule.parent, rule);
