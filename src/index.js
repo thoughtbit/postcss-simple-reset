@@ -67,7 +67,7 @@ const stringifyNode = (node) => {
   }
 }
 
-module.exports = postcss.plugin('postcss-simple-reset', () => {
+export default postcss.plugin('postcss-simple-reset', () => {
   return (root) => {
     let promises = [];
     root.walkAtRules('reset', (rule) => {
@@ -105,3 +105,4 @@ module.exports = postcss.plugin('postcss-simple-reset', () => {
     return Promise.all(promises);
   };
 });
+

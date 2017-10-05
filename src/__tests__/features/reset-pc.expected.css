@@ -1,55 +1,84 @@
-/**
- * 1. Change the default font family in all browsers (opinionated).
- * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+@charset "utf-8";/**
+ * @title           PC端重置样式表
+ * @author          moocss
+ * @email           moocss@gmail.com
+ * @version         1.8
+ * @update          $Date: 2017年10月04日18:08:08 $
+ * @copyright:      基于 normalize.css | MIT License
+ *
+ * Table of contents:
+ * Document
+ * Sections
+ * Grouping content
+ * Text-level semantics
+ * Embedded content
+ * Forms
+ * Interactive
+ * Scripting
+ * Hidden
+ *//**
+  * reset.pc.css 解决的问题
+  * 基于业务需要兼容的浏览器做到以下几点：
+  * 1.解决BUG，特别是低级浏览器的常见BUG，IE8+；
+  * 2.统一效果，不要盲目追求重置为0, 按需配置重置样式；
+  * 3.自定义重置样式
+  *//* -----------------------------------------------------------------------------
+  reset styles
+----------------------------------------------------------------------------- *//*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css *//* Document
+   ========================================================================== *//**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
  */html {
-  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
-}/**
+}/* Sections
+   ========================================================================== *//**
  * Remove the margin in all browsers (opinionated).
  */body {
   margin: 0;
-}/* HTML5 display definitions
-   ========================================================================== *//**
+}/**
  * Add the correct display in IE 9-.
- * 1. Add the correct display in Edge, IE, and Firefox.
- * 2. Add the correct display in IE.
  */article,
 aside,
-details, /* 1 */
-figcaption,
-figure,
 footer,
 header,
-main, /* 2 */
-menu,
 nav,
-section,
-summary { /* 1 */
+section {
   display: block;
 }/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}/* Grouping content
+   ========================================================================== *//**
  * Add the correct display in IE 9-.
- */audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}/**
- * Add the correct display in iOS 4-7.
- */audio:not([controls]) {
-  display: none;
-  height: 0;
-}/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */progress {
-  vertical-align: baseline;
-}/**
- * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
- */template, /* 1 */
-[hidden] {
-  display: none;
-}/* Links
+ */figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}/**
+ * Add the correct margin in IE 8.
+ */figure {
+  margin: 1em 40px;
+}/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}/* Text-level semantics
    ========================================================================== *//**
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
@@ -57,14 +86,7 @@ video {
   background-color: transparent; /* 1 */
   -webkit-text-decoration-skip: objects; /* 2 */
 }/**
- * Remove the outline on focused links when they are also active or hovered
- * in all browsers (opinionated).
- */a:active,
-a:hover {
-  outline-width: 0;
-}/* Text-level semantics
-   ========================================================================== *//**
- * 1. Remove the bottom border in Firefox 39-.
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */abbr[title] {
   border-bottom: none; /* 1 */
@@ -81,15 +103,17 @@ strong {
 strong {
   font-weight: bolder;
 }/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}/**
  * Add the correct font style in Android 4.3-.
  */dfn {
   font-style: italic;
-}/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }/**
  * Add the correct background and color in IE 9-.
  */mark {
@@ -114,6 +138,16 @@ sup {
   top: -0.5em;
 }/* Embedded content
    ========================================================================== *//**
+ * Add the correct display in IE 9-.
+ */audio,
+video {
+  display: inline-block;
+}/**
+ * Add the correct display in iOS 4-7.
+ */audio:not([controls]) {
+  display: none;
+  height: 0;
+}/**
  * Remove the border on images inside links in IE 10-.
  */img {
   border-style: none;
@@ -121,46 +155,19 @@ sup {
  * Hide the overflow in IE.
  */svg:not(:root) {
   overflow: hidden;
-}/* Grouping content
-   ========================================================================== *//**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}/**
- * Add the correct margin in IE 8.
- */figure {
-  margin: 1em 40px;
-}/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
 }/* Forms
    ========================================================================== *//**
- * 1. Correct color not being inherited.
-      Known issue: affects color of disabled elements.
- * 2. Change font properties to `inherit` in all browsers (opinionated).
- * 3. Remove the margin in Firefox and Safari.
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
  */button,
 input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
-  vertical-align: middle;
-}/**
- * Restore the font weight unset by the previous rule.
- */optgroup {
-  font-weight: bold;
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }/**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
@@ -198,11 +205,9 @@ html [type="button"], /* 1 */
 [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }/**
- * Change the border, margin, and padding in all browsers (opinionated).
+ * Correct the padding in Firefox.
  */fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: 0.35em 0.75em 0.625em;
 }/**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
@@ -216,17 +221,15 @@ html [type="button"], /* 1 */
   padding: 0; /* 3 */
   white-space: normal; /* 1 */
 }/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}/**
  * Remove the default vertical scrollbar in IE.
  */textarea {
   overflow: auto;
-  resize: none;
-  vertical-align: top;
-}/* webkit focus outline */input,
-select,
-textarea {
-  outline: 0;
-}/* Re-set default cursor for disabled elements. */[disabled] {
-  cursor: default;
 }/**
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
@@ -246,48 +249,241 @@ textarea {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }/**
- * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */[type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
-}/**
- * Correct the text style of placeholders in Chrome, Edge, ff, and Safari.
- */input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
-}input::-ms-clear,
-input::-ms-reveal {
-  display: none;
 }/**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
-}/* table
-   ========================================================================== *//* Remove table cell spacing and padding */table {
+}/* Interactive
+   ========================================================================== *//*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */details, /* 1 */
+menu {
+  display: block;
+}/*
+ * Add the correct display in all browsers.
+ */summary {
+  display: list-item;
+}/* Scripting
+   ========================================================================== *//**
+ * Add the correct display in IE 9-.
+ */canvas {
+  display: inline-block;
+}/**
+ * Add the correct display in IE.
+ */template {
+  display: none;
+}/* Hidden
+   ========================================================================== *//**
+ * Add the correct display in IE 10-.
+ */[hidden] {
+  display: none;
+}/* -----------------------------------------------------------------------------
+  reset styles
+----------------------------------------------------------------------------- *//*! 自定义重置样式 | moocss.com *//**
+ * 触发怪癖盒模型
+ */* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}*:before,
+*:after {
+  box-sizing: border-box;
+}html,
+body {
+  width: 100%;
+  height: 100%;
+}/**
+ * unify the setting of elements's margin and padding for browsers
+ */body {
+  font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}/**
+ * Reset fonts for relevant elements
+ */button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}/**
+* 禁止水平拖动，防止破坏布局
+*/textarea {
+  resize: vertical;
+}ul,
+ol {
+  list-style: none;
+}input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}select {
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  cursor: pointer;
+}img {
+  color: transparent;
+  font-size: 0;
+  height: auto;
+  image-rendering: optimizeQuality;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+  max-width: 100%;
+}/**
+ * label 元素给予手型，暗示此处可点击
+ */label {
+  cursor: pointer;
+}/**
+ * 中文小于 12px 可读性很差
+ * 1. 统一 IE 6-7 中字体大小
+ * 2. 统一 Firefox 4+，Safari 5 和 Chrome 中「section」和「article」内的字体大小
+ */h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}h1 {
+  font-size: 36px;
+}h2 {
+  font-size: 30px;
+}h3 {
+  font-size: 22px;
+}h4 {
+  font-size: 18px;
+}h5 {
+  font-size: 14px;
+}h6 {
+  font-size: 12px;
+}/**
+ * Links
+ * 1. 去掉 IE 10+ 点击链接时的灰色背景
+ */a {
+  color: #108ee9;
+  background: transparent; /* 1 */
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+}a:focus {
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip: ink;
+}a:hover {
+  color: #49a9ee;
+}a:active {
+  color: #0e77ca;
+}a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+}a[disabled] {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+  pointer-events: none;
+}/**
+ * 代码
+ */code,
+kbd,
+pre,
+samp {
+  font-family: Consolas, Menlo, Courier, monospace;
+}/**
+ * 增强所有浏览器中 pre 标签中文本的可读性
+ * 1. IE 6-7 不支持 pre-wrap
+ * 2. pre 标签应当包含滚溢出
+ */pre {
+  white-space: pre;
+  white-space: pre-wrap; /* 1 */
+  word-wrap: break-word;
+  overflow: auto;
+}/**
+ * 合并单元格边框
+ */table {
   border-collapse: collapse;
   border-spacing: 0;
-}td,
-th {
-  padding: 0;
-}h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
-  margin: 0;
-}ul, ol, li, dl, dd {
-  margin: 0;
-  padding: 0;
-}ul, ol {
-  list-style: none outside none;
-}h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-  font-weight: normal;
+}/**
+ * 突出显示的页面用户选择的任何部分
+ */::-moz-selection {
+  background: #108ee9;
+  color: #fff;
+}::selection {
+  background: #108ee9;
+  color: #fff;
+}/**
+ * WebKit Scrollbar.
+ */::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 12px;
+}::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  border: 4px solid rgba(255, 255, 255, 0);
+  background-clip: content-box;
+  background-color: #000;
+}::-webkit-scrollbar-thumb:hover {
+  border-radius: 12px;
+  border: 4px solid rgba(255, 255, 255, 0);
+  background-clip: content-box;
+  background-color: #666;
+}::-webkit-scrollbar-corner {
+  background-color: #333;
 }
