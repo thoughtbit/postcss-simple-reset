@@ -1,6 +1,6 @@
 {
   "name": "postcss-simple-reset",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "postcss-simple-reset is a postcss plugin to help you to reset your css via at-rules.",
   "main": "lib/index.js",
   "authors": [
