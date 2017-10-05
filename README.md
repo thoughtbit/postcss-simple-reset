@@ -43,9 +43,10 @@ ul, ol {
   border-collapse: collapse;
   border-spacing: 0;
   vertical-align: middle;
+  color: #fff;
 }
-.table th,
-.table td {
+
+td, th {
   background-color: #fff;
   text-align: left;
   font-weight: normal;
@@ -53,16 +54,19 @@ ul, ol {
   margin: 0;
   padding: 0;
 }
+
 ul, ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .regular-font {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
+
 .box {
   margin: 0;
   padding: 0;
