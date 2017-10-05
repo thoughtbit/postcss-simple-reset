@@ -42,7 +42,7 @@
     "tape": "tape \"lib/__tests__/*.js\"",
     "test": "npm run lint && npm run babelify && npm run tape",
     "build": "npm run babelify",
-    "release": "npmpub"
+    "pub": "npm publish && git push origin"
   },
   "babel": {
     "presets": [
