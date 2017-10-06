@@ -1,14 +1,7 @@
 import postcss from 'postcss';
 import parser from 'postcss-value-parser';
 import humps from 'humps';
-import Promise from 'promise-polyfill';
 import resetCore from './reset-core';
-
-if (typeof window !== 'undefined') {
-  window.Promise = window.Promise || Promise
-} else if (typeof global !== 'undefined') {
-  global.Promise = global.Promise || Promise
-}
 
 const atRules = {
   global(platefprm) {
@@ -74,10 +67,6 @@ const stringifyNode = (node) => {
   }
 }
 
-const isPromise = (obj) => {
-  return !!obj && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function';
-}
-
 module.exports = postcss.plugin('postcss-simple-reset', () => {
   return (root) => {
     let promises = [];
@@ -99,11 +88,8 @@ module.exports = postcss.plugin('postcss-simple-reset', () => {
         });
 
         let promise = ruleFun(...params);
+        promises.push(promise);
 
-        if (isPromise(promise)) {
-          promises.push(promise);
-        }
-        
         promise.then((resolve) => {
           if (typeof resolve === 'object') {
             applyRuleSetToNode(resolve, rule.parent, rule);
