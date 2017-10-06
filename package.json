@@ -1,6 +1,6 @@
 {
   "name": "postcss-simple-reset",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "postcss-simple-reset is a postcss plugin to help you to reset your css via at-rules.",
   "main": "lib/index.js",
   "authors": [
@@ -26,6 +26,7 @@
     "babel-tape-runner": "^2.0.1",
     "eslint": "^2.4.0",
     "eslint-plugin-import": "^2.7.0",
+    "promise-polyfill": "^6.0.2",
     "object-assign": "^3.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.0",

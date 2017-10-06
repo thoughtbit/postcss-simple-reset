@@ -1,7 +1,14 @@
 import postcss from 'postcss';
 import parser from 'postcss-value-parser';
 import humps from 'humps';
+import Promise from 'promise-polyfill';
 import resetCore from './reset-core';
+
+if (typeof window !== 'undefined') {
+  window.Promise = window.Promise || Promise
+} else if (typeof global !== 'undefined') {
+  global.Promise = global.Promise || Promise
+}
 
 const atRules = {
   global(platefprm) {
