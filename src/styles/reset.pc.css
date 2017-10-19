@@ -5,19 +5,21 @@
  * @author          moocss
  * @email           moocss@gmail.com
  * @version         1.8
- * @update          $Date: 2017年10月04日18:08:08 $
+ * @update          $Date: 2017年10月19日10:56:00 $
  * @copyright:      基于 normalize.css | MIT License
  *
  * Table of contents:
- * Document
- * Sections
- * Grouping content
- * Text-level semantics
- * Embedded content
- * Forms
- * Interactive
- * Scripting
- * Hidden
+ * reset styles
+ *    Document
+ *    Sections
+ *    Grouping content
+ *    Text-level semantics
+ *    Embedded content
+ *    Forms
+ *    Interactive
+ *    Scripting
+ *    Hidden
+ * custom reset styles
  */
 
  /**
@@ -27,7 +29,7 @@
   * 2.统一效果，不要盲目追求重置为0, 按需配置重置样式；
   * 3.自定义重置样式
   */
- 
+
 /* -----------------------------------------------------------------------------
   reset styles
 ----------------------------------------------------------------------------- */
@@ -480,12 +482,12 @@ template {
 }
 
 /* -----------------------------------------------------------------------------
-  reset styles
+  custom reset styles
 ----------------------------------------------------------------------------- */
 /*! 自定义重置样式 | moocss.com */
 
 /**
- * 触发怪癖盒模型
+ * Prevent padding and border from affecting element width
  */
 
 * {
@@ -556,6 +558,25 @@ nav,
 section {
   margin: 0;
   padding: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+}
+
+/**
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+iframe {
+  border: 0;
 }
 
 /**
@@ -667,7 +688,6 @@ h6 {
  */
 
 a {
-  color: #108ee9;
   background: transparent; /* 1 */
   text-decoration: none;
   outline: none;
@@ -682,22 +702,18 @@ a:focus {
           text-decoration-skip: ink;
 }
 
-a:hover {
-  color: #49a9ee;
-}
-
-a:active {
-  color: #0e77ca;
-}
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers.
+ */
 
 a:active,
 a:hover {
-  outline: 0;
+  outline-width: 0;
   text-decoration: none;
 }
 
 a[disabled] {
-  color: rgba(0, 0, 0, 0.25);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -731,44 +747,4 @@ pre {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-/**
- * 突出显示的页面用户选择的任何部分
- */
-
-::-moz-selection {
-  background: #108ee9;
-  color: #fff;
-}
-::selection {
-  background: #108ee9;
-  color: #fff;
-}
-
-/**
- * WebKit Scrollbar.
- */
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  border: 4px solid rgba(255, 255, 255, 0);
-  background-clip: content-box;
-  background-color: #000;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  border-radius: 12px;
-  border: 4px solid rgba(255, 255, 255, 0);
-  background-clip: content-box;
-  background-color: #666;
-}
-
-::-webkit-scrollbar-corner {
-  background-color: #333;
 }

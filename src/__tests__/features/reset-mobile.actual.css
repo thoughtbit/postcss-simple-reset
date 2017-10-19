@@ -3,19 +3,21 @@
  * @author          moocss
  * @email           moocss@gmail.com
  * @version         1.8
- * @update          $Date: 2017年10月04日18:08:08 $
+ * @update          $Date: 2017年10月19日10:56:00 $
  * @copyright:      基于 normalize.css | MIT License
  *
  * Table of contents:
- * Document
- * Sections
- * Grouping content
- * Text-level semantics
- * Embedded content
- * Forms
- * Interactive
- * Scripting
- * Hidden
+ * reset styles
+ *    Document
+ *    Sections
+ *    Grouping content
+ *    Text-level semantics
+ *    Embedded content
+ *    Forms
+ *    Interactive
+ *    Scripting
+ *    Hidden
+ * custom reset styles
  *//**
   * reset.mobile.css 解决的问题
   * 基于业务需要兼容的浏览器做到以下几点：
@@ -285,7 +287,7 @@ menu {
  */[hidden] {
   display: none;
 }/* -----------------------------------------------------------------------------
-  reset styles
+  custom reset styles
 ----------------------------------------------------------------------------- *//*! 自定义重置样式 | moocss.com */html,
 body {
   height: 100%;
@@ -345,6 +347,8 @@ nav,
 section {
   margin: 0;
   padding: 0;
+}iframe {
+  border: 0;
 }table {
   border-collapse: collapse;
   border-spacing: 0;
