@@ -285,7 +285,7 @@ menu {
    ========================================================================== *//**
  * Add the correct display in IE 10-.
  */[hidden] {
-  display: none;
+  display: none !important;
 }/* -----------------------------------------------------------------------------
   custom reset styles
 ----------------------------------------------------------------------------- *//*! 自定义重置样式 | moocss.com *//**
@@ -471,4 +471,10 @@ samp {
  */table {
   border-collapse: collapse;
   border-spacing: 0;
+}/**
+ * Suppress the focus outline on elements that cannot be accessed via keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ */[tabindex="-1"]:focus {
+  outline: none !important;
 }

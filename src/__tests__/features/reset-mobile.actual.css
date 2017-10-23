@@ -285,7 +285,7 @@ menu {
    ========================================================================== *//**
  * Add the correct display in IE 10-.
  */[hidden] {
-  display: none;
+  display: none !important;
 }/* -----------------------------------------------------------------------------
   custom reset styles
 ----------------------------------------------------------------------------- *//*! 自定义重置样式 | moocss.com */html,
@@ -373,4 +373,10 @@ a {
   text-decoration: none;
 }::-webkit-scrollbar {
   display: none;
+}/**
+ * Suppress the focus outline on elements that cannot be accessed via keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ */[tabindex="-1"]:focus {
+  outline: none !important;
 }
