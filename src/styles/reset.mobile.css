@@ -478,7 +478,7 @@ template {
  */
 
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 /* -----------------------------------------------------------------------------
@@ -595,4 +595,14 @@ a {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+/**
+ * Suppress the focus outline on elements that cannot be accessed via keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ */
+
+[tabindex="-1"]:focus {
+  outline: none !important;
 }
